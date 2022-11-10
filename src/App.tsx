@@ -7,7 +7,7 @@ import { RegisterUser } from './components/RegisterUser';
 function App() {
   return (
     <div>
-      <RegisterUser/>
+      <RegisterUser email='' password='' confirmPassword='' town='' country=''/>
     </div>
   );
 }
