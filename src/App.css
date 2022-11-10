@@ -37,22 +37,6 @@
   }
 }
 
-.kwenik-register-ad-image{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.kwenik-register-forms{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-}
-
-.kwenik-form-one{
+.kwenik-register-form{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border: 0;
 }
