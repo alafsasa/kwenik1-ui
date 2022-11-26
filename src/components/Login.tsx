@@ -34,7 +34,7 @@ export const Login: React.FC<UserBioLogins> = ({email, password}) => {
                 <div className="col-sm-6 mx-auto">
                     <div className="card mt-5">
                         <div className="card-body">
-                            <table>
+                            <table className="w-100">
                                 <tbody>
                                     <tr>
                                         <td className="w-50" style={{height: '400px'}}>
@@ -59,12 +59,12 @@ export const Login: React.FC<UserBioLogins> = ({email, password}) => {
                                                     <div className="mb-3">
                                                         <button type="submit" className="btn w-100" style={{backgroundColor:' #30B98D', color: '#bfd200', cursor: 'pointer'}} > Sign In</button>
                                                     </div>
-                                                    <div>
+                                                    <div className="mb-3">
                                                         <i>
                                                             Forgot password?
                                                         </i>
                                                     </div>
-                                                    <div>
+                                                    <div className="mb-3">
                                                         Create an account instead.
                                                     </div>
                                                 </form>
