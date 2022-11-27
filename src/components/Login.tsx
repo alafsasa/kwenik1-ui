@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import kwenikLogo from '../logo1000.png';
+import axios from 'axios';
 
 interface UserBioLogins {
     email: string;
@@ -24,6 +25,19 @@ export const Login: React.FC<UserBioLogins> = ({email, password}) => {
         if(mail && pass !== ''){
             console.log(mail)
             console.log(pass)
+            const user = {
+                email: mail,
+                password: pass
+            };
+            axios.post("http://localhost:3001/api/auth/login", user).then((user)=>{
+                console.log(user);
+            }).catch((error)=>{
+                if(error.response){
+                    console.log(error.response.data)
+                }else if(error.request){
+                    console.log(error.request)
+                }
+            })
         }else{
             console.log('No data inputed!');
         }
