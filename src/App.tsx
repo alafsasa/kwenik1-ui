@@ -2,16 +2,21 @@
 //import logo from './logo.svg';
 //import logo from './logo1000.png';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//components
+import { Starter } from './components/Starter';
+import { RegisterUser } from './components/RegisterUser';
 import { Login } from './components/Login';
-import { NavBar } from './components/NavBar';
-//import { RegisterUser } from './components/RegisterUser';
 
 function App() {
   return (
-    <div>
-      <NavBar/>
-      <Login email='' password='' />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Starter/>} />
+        <Route path='/register' element={<RegisterUser email='' password='' confirmPassword='' town='' country=''/>} />
+        <Route path='/login' element={<Login email='' password='' />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import kwenikLogo from '../logo1000.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { NavBar } from "./NavBar";
 
 interface UserBioLogins {
     email: string;
@@ -44,6 +46,7 @@ export const Login: React.FC<UserBioLogins> = ({email, password}) => {
     }
     return(
         <div className="container-fluid">
+            <NavBar/>
             <div className="row">
                 <div className="col-sm-6 mx-auto">
                     <div className="card mt-5">
@@ -79,7 +82,9 @@ export const Login: React.FC<UserBioLogins> = ({email, password}) => {
                                                         </i>
                                                     </div>
                                                     <div className="mb-3">
-                                                        Create an account instead.
+                                                        <Link to='/register'>
+                                                            Create an account instead.
+                                                        </Link>
                                                     </div>
                                                 </form>
                                             </div>

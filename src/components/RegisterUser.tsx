@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import kwenikLogo from '../logo1000.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { NavBar } from './NavBar';
 
 //interface
 //collect user info
@@ -64,6 +66,7 @@ export const RegisterUser = (userBio: UserBio) => {
     }
     return(
         <div className="container">
+            <NavBar/>
             <div className="row">
                 <div className="col-sm-12 mt-5 mb-5"></div>
                 <div className="col-sm-7">
@@ -105,11 +108,13 @@ export const RegisterUser = (userBio: UserBio) => {
                                         <div>
                                             <button type='submit' className='btn w-100' style={{backgroundColor: '#30B98D', color: '#bfd200', fontWeight: 'bold', fontSize: '16px', cursor: 'pointer'}}>Sign Up</button>
                                             <div className='text-center mt-3'>
-                                                <span style={{fontSize: '14px'}}>
-                                                    <i>
-                                                        Sign in instead?
-                                                    </i>
-                                                </span>
+                                                <Link to='/login'>
+                                                    <span style={{fontSize: '14px'}}>
+                                                        <i>
+                                                            Sign in instead?
+                                                        </i>
+                                                    </span>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
