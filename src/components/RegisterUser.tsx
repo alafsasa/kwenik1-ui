@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import kwenikLogo from '../logo1000.png';
+import axios from 'axios';
 
 //interface
 //collect user info
@@ -44,9 +45,21 @@ export const RegisterUser = (userBio: UserBio) => {
             //send this data to the backend
             console.log(email)
             console.log(password)
-            console.log(confirmPassword)
             console.log(town)
             console.log(country)
+            //send data to the backend
+            const user = {
+                email: email,
+                password: password,
+                town: town,
+                country: country
+            }
+            axios.post("http://localhost:3001/api/auth/signup", user).then((user)=>{
+                //responses from backend
+                console.log(user.data);
+            }).catch((error)=>{
+                console.log(error)
+            })
         }
     }
     return(
