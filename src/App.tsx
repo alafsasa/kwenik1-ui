@@ -2,6 +2,7 @@
 //import logo from './logo.svg';
 //import logo from './logo1000.png';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //components
 import { Starter } from './components/Starter';

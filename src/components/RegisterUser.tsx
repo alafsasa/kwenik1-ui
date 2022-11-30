@@ -3,6 +3,7 @@ import kwenikLogo from '../logo1000.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { NavBar } from './NavBar';
+import { ToastContainer, toast } from 'react-toastify';
 
 //interface
 //collect user info
@@ -59,14 +60,21 @@ export const RegisterUser = (userBio: UserBio) => {
             axios.post("http://localhost:3001/api/auth/signup", user).then((user)=>{
                 //responses from backend
                 console.log(user.data);
+                toast.success(user.data)
             }).catch((error)=>{
-                console.log(error)
+                if(error.response){
+                    console.log(error.response.data.message)
+                    toast.error(error.response.data.message)
+                }else if(error.request){
+                    console.log(error.request)
+                }
             })
         }
     }
     return(
         <div className="container-fluid">
             <NavBar/>
+            <ToastContainer position='top-right' hideProgressBar={false} closeOnClick={false} pauseOnHover={false}/>
             <div className="row">
                 <div className='col-sm-6 position-absolute h-100'>
                     <div className='kwenik-center-indiv'>
