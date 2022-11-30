@@ -46,53 +46,46 @@ export const Login: React.FC<UserBioLogins> = ({email, password}) => {
     }
     return(
         <div className="container-fluid">
-            <NavBar/>
             <div className="row">
-                <div className="col-sm-6 mx-auto">
-                    <div className="card mt-5">
-                        <div className="card-body">
-                            <table className="w-100">
-                                <tbody>
-                                    <tr>
-                                        <td className="w-50" style={{height: '400px'}}>
-                                            <div className="kwenik-login-form">
-                                                <div className="text-center">
-                                                    <img src={kwenikLogo} alt="kwenik" height={60} width={60} />
-                                                    <div>
-                                                        <span style={{fontSize: '30px'}}>KWENIK</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td className="w-50">
-                                            <div>
-                                                <form onSubmit={handleFormInputs}>
-                                                    <div className="mb-3 mt-3">
-                                                        <input type="email" className="form-control" placeholder="Email" value={mail} onChange={handleEmailChange} />
-                                                    </div>
-                                                    <div className="mb-3">
-                                                        <input type="password" className="form-control" placeholder="Password" value={pass} onChange={handlePasswordChange} />
-                                                    </div>
-                                                    <div className="mb-3">
-                                                        <button type="submit" className="btn w-100" style={{backgroundColor:' #30B98D', color: '#bfd200', cursor: 'pointer'}} > Sign In</button>
-                                                    </div>
-                                                    <div className="mb-3">
-                                                        <i>
-                                                            Forgot password?
-                                                        </i>
-                                                    </div>
-                                                    <div className="mb-3">
-                                                        <Link to='/register'>
-                                                            Create an account instead.
-                                                        </Link>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div className="col-sm-6 position-absolute h-100 kwenik-bg">
+                    <div className="p-2">
+                        <h4 style={{fontWeight: 'bold'}}>Kwenik</h4>
+                    </div>
+                    <div className="kwenik-center-indiv">
+                        <img src={kwenikLogo} alt="kwenik logo" width={200} height={200} />
+                    </div>
+                </div>
+                <div className="col-sm-6 offset-sm-6 position-absolute h-100">
+                    <div className="kwenik-center-indiv w-50">
+                        <form onSubmit={handleFormInputs}>
+                            <div className="mb-3 mt-3">
+                                <div className="display-4" style={{color: '#bfd200', fontWeight: 'bold'}}>
+                                    Log in
+                                </div>
+                            </div>
+                            <div className="mb-3">
+                                <input type="email" className="form-control" placeholder="Email" value={mail} onChange={handleEmailChange} />
+                            </div>
+                            <div className="mb-3">
+                                <input type="password" className="form-control" placeholder="Password" value={pass} onChange={handlePasswordChange} />
+                            </div>
+                            <div className="mb-3">
+                                <button type="submit" className="btn w-100" style={{backgroundColor:' #30B98D', color: '#bfd200', cursor: 'pointer', fontWeight: 'bold'}} > Sign In</button>
+                            </div>
+                            <div className="mb-3">
+                                <i>
+                                    Forgot password?
+                                </i>
+                            </div>
+                            <div className="mb-3">
+                                <Link to='/register' style={{textDecoration: 'none', color: '#bfd200', fontWeight: 'bold'}}>
+                                    Create an account instead.
+                                </Link>
+                            </div>
+                        </form>
+                    </div>
+                    <div style={{position: 'absolute', bottom: '16px', right: '40%', color: '#969696', fontSize: '14px'}}>
+                        <p>Terms & Conditions</p>
                     </div>
                 </div>
             </div>
