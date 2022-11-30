@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import kwenikLogo from '../logo1000.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+//components
 import { NavBar } from './NavBar';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -25,6 +26,7 @@ export const RegisterUser = (userBio: UserBio) => {
     const [confirmPassword, setConfirmPassword] = useState(userBio.confirmPassword);
     const [town, setTown] = useState(userBio.town);
     const [country, setCountry] = useState('Kenya');
+    const [error, setError] = useState(false);
     //handler events
     const handleEmailChange = (e: InputEvent): void => {
         setEmail(e.target.value);
@@ -40,6 +42,21 @@ export const RegisterUser = (userBio: UserBio) => {
     }
     const handleCountyChange = (e: InputEvent): void => {
         setCountry('Kenya');
+    }
+    //validate email & password
+    const isValidEmail = (email: string) => {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+    const validateEmail = () => {
+        if(email !== ''){
+            if(!isValidEmail(email)){
+                setError(true)
+            }else{
+                setError(false)
+            }
+        }else{
+            setError(false)
+        }
     }
     //take user input
     function handleFormInputs(e: any){
@@ -93,7 +110,12 @@ export const RegisterUser = (userBio: UserBio) => {
                                 </div>
                                 <div className='card-body'>
                                     <div className="mb-3 mt-3">
-                                        <input type="email" className='form-control' placeholder='Email' value={email} onChange={handleEmailChange} required />
+                                        {
+                                            error ?
+                                            <input type="email" className='form-control' placeholder='Email' value={email} onChange={handleEmailChange} required onBlur={validateEmail} style={{border: '2px solid red'}}/>
+                                            :
+                                            <input type="email" className='form-control' placeholder='Email' value={email} onChange={handleEmailChange} required onBlur={validateEmail}/>
+                                        }
                                     </div>
                                     <div className='mb-3'>
                                         <input type="password" className='form-control' placeholder='Password' value={password} onChange={handlePasswordChange} required />
