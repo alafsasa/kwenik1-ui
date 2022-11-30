@@ -1,4 +1,3 @@
-import { NavBar } from "./NavBar";
 import { RegisterUser } from "./RegisterUser";
 
 export const Starter = () => {

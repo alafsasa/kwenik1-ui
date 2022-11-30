@@ -65,7 +65,7 @@ export const RegisterUser = (userBio: UserBio) => {
         }
     }
     return(
-        <div className="container">
+        <div className="container-fluid">
             <NavBar/>
             <div className="row">
                 <div className="col-sm-12 mt-5 mb-5"></div>
