@@ -68,14 +68,13 @@ export const RegisterUser = (userBio: UserBio) => {
         <div className="container-fluid">
             <NavBar/>
             <div className="row">
-                <div className="col-sm-12 mt-5 mb-5"></div>
-                <div className="col-sm-7">
-                    <div>
-                        <img src="https://res.cloudinary.com/unloccode/image/upload/v1668010295/kwenikfaced_yfaogu.jpg" alt="kwenik" style={{height: '600px', width: '600px'}} />
+                <div className='col-sm-6 position-absolute h-100'>
+                    <div className='kwenik-center-indiv'>
+                        <img src="https://res.cloudinary.com/unloccode/image/upload/v1668010295/kwenikfaced_yfaogu.jpg" alt="" height={450} width={450} />
                     </div>
                 </div>
-                <div className="col-sm-5">
-                    <div>
+                <div className='col-sm-6 position-absolute h-100 offset-sm-6'>
+                    <div className='kwenik-center-indiv w-50'>
                         <form onSubmit={handleFormInputs}>
                             <div className='card border-0 kwenik-register-form'>
                                 <div className='text-center'>
@@ -108,7 +107,7 @@ export const RegisterUser = (userBio: UserBio) => {
                                         <div>
                                             <button type='submit' className='btn w-100' style={{backgroundColor: '#30B98D', color: '#bfd200', fontWeight: 'bold', fontSize: '16px', cursor: 'pointer'}}>Sign Up</button>
                                             <div className='text-center mt-3'>
-                                                <Link to='/login'>
+                                                <Link to='/login' style={{textDecoration: 'none', color: '#bfd200', fontWeight: 'bold'}}>
                                                     <span style={{fontSize: '14px'}}>
                                                         <i>
                                                             Sign in instead?
@@ -121,6 +120,9 @@ export const RegisterUser = (userBio: UserBio) => {
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    <div style={{position: 'absolute', bottom: '16px', right: '40%', color: '#969696', fontSize: '14px'}}>
+                        <p>Terms & Conditions</p>
                     </div>
                 </div>
             </div>
