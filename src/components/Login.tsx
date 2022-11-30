@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import kwenikLogo from '../logo1000.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { NavBar } from "./NavBar";
 
 interface UserBioLogins {
     email: string;
